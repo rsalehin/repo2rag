@@ -1,4 +1,4 @@
-{
+﻿{
     "name":  "repo2rag",
     "version":  "1.0.0",
     "description":  "",
@@ -28,5 +28,8 @@
                          "fast-glob":  "^3.3.3",
                          "ignore":  "^7.0.5",
                          "simple-git":  "^3.36.0"
-                     }
+                     },
+    "bin":  {
+                "repo2rag":  "dist/cli/index.js"
+            }
 }
