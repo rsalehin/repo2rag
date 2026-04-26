@@ -2,10 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>repo2rag</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>repo2rag – AI-Friendly Repo Packer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>repo2rag</h1>
-  <p>Server is running – the UI will be built next.</p>
+  <div class="container">
+    <header>
+      <h1>📦 repo2rag</h1>
+      <p class="subtitle">Pack any GitHub repository into a single, AI‑friendly Markdown file</p>
+    </header>
+
+    <div class="card">
+      <div class="input-group">
+        <input type="text" id="repoUrl" placeholder="https://github.com/user/repo" autocomplete="off">
+        <button id="packBtn">Pack Repository</button>
+      </div>
+      <div id="error" class="error hidden"></div>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Packing repository…</p>
+      </div>
+    </div>
+
+    <div id="result" class="result hidden">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value" id="totalFiles">0</span>
+          <span class="stat-label">Files</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="totalTokens">0</span>
+          <span class="stat-label">Tokens</span>
+        </div>
+      </div>
+
+      <div class="preview-box">
+        <div class="preview-header">
+          <h3>📄 Packed Markdown Preview</h3>
+          <div class="btn-group">
+            <button id="copyBtn" class="btn-outline">📋 Copy</button>
+            <button id="downloadBtn" class="btn-outline">💾 Download</button>
+          </div>
+        </div>
+        <pre id="preview" class="preview"></pre>
+      </div>
+    </div>
+
+    <footer>
+      Built for AI · <a href="https://github.com/rsalehin/repo2rag" target="_blank">GitHub</a>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
